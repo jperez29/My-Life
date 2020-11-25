@@ -9,7 +9,6 @@ def scrape():
     req = requests.get(url)
     soup = BeautifulSoup(req.text, "html.parser")
     table = soup.findAll('tr')
-#     new_table = table[31:-46]
     
     data = [list(item.stripped_strings) for item in table[31:-46]]
     world = [list(item.stripped_strings) for item in table[28:29]]
@@ -39,5 +38,5 @@ def scrape():
     print(americas_data)       
     return americas_data
     
-# if __name__ == '__main__':
+if __name__ == '__main__':
     scrape()
