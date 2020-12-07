@@ -40,18 +40,20 @@ def scrape():
     
 def setup_db():
     data = scrape()
-    for lst in data:
-        print(lst)
     db.drop_all()
     db.create_all()
     for lst in data:
         table = Covid19(country = lst[0], first_case_date = lst[1], jan_1 = lst[2], feb_1 = lst[3], mar_1= lst[4], 
                         apr_1 = lst[5], may_1 = lst[6], jun_1 = lst[7], jul_1 = lst[8], aug_1=lst[9], sept_1 = lst[10],
                         oct_1 = lst[11], nov_1 = lst[12])
-        print(table)
         db.session.add(table)
         db.session.commit()
+
+def get_all():
+    query = Covid19.query.all()  
+    print(query)
 
 if __name__ == '__main__':
     scrape()
     setup_db()
+    get_all()

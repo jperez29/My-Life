@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>COVID-19 Data</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Percent of COVID-19 Cases in the Americas Out of the Total Number of Cases in the World</h1>
+    <table>
+        <tr>
+            <td><b>Country</b></td>
+            <td><b>First case</b></td>
+            <td><b>Jan 1</b></td>
+            <td><b>Feb 1</b></td>
+            <td><b>Mar 1</b></td>
+            <td><b>Apr 1</b></td>
+            <td><b>May 1</b></td>
+            <td><b>Jun 1</b></td>
+            <td><b>Jul 1</b></td>
+            <td><b>Aug 1</b></td>
+            <td><b>Sep 1</b></td>
+            <td><b>Oct 1 1</b></td>
+            <td><b>Nov 1</b></td>
+            <td><b>Dec 1</b></td>
+        </tr>
+        {% for row in items%}
+        <tr>
+            {% for elem in row%}
+            <td> {{ elem }} </td>
+            {% endfor %}
+        </tr>
+        {% endfor %}  
