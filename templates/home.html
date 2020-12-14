@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div>
+    <h1>Percentages of COVID-19 Cases in the Americas Out of the Total Number of Cases in the World</h1>
+    <h3>The COVID-19 pandemic has caused hug social and ecomonic devastations around the world. 
+        This table shows the percent of cumulative COVID-19 cases
+        in each country out of the total number of cases in the world at the beginning of each month.
+        It captures the growth of cumulative COVID-19 cases in the US and 
+        Latin America compared to the rest of the world.
+    </h3>
+    <table>
+        <tr>
+            <td><b>Country</b></td>
+            <td><b>First case</b></td>
+            <td><b>Jan 1</b></td>
+            <td><b>Feb 1</b></td>
+            <td><b>Mar 1</b></td>
+            <td><b>Apr 1</b></td>
+            <td><b>May 1</b></td>
+            <td><b>Jun 1</b></td>
+            <td><b>Jul 1</b></td>
+            <td><b>Aug 1</b></td>
+            <td><b>Sep 1</b></td>
+            <td><b>Oct 1 </b></td>
+            <td><b>Nov 1</b></td>
+            <td><b>Dec 1</b></td>
+        </tr>
+        {% for row in data%}
+        <tr>
+
+            {% for key,val in row.items()%}
+            <td> {{ val }} </td>
+            {% endfor %}
+        </tr>
+        {% endfor %}   
+</div>
+{% endblock %}

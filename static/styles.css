@@ -1,0 +1,40 @@
+  body{
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(217, 223, 213);
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    text-align: center;
+}
+table, tr, td {
+  border: 1px black solid;
+  border-collapse:collapse;
+  margin-left: auto;
+  margin-right: auto;
+  /* width:50%; */
+}
+
+tr {
+    font-size: 20px;
+}
+
+h3{
+  text-indent: 70px;
+}
+
+td
+{
+  height:30px;
+}
+tbody tr:nth-child(odd)
+{
+  background: rgb(148, 187, 179);
+}
+tbody tr:nth-child(1)
+{
+  background: rgb(5, 143, 161);
+  width: 50%
+}
