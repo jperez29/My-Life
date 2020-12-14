@@ -1,2 +1,2 @@
-release: python ./import_script.py
+release: python ./scrapey.py
 worker: gunicorn -w 4 app:app
