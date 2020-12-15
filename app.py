@@ -77,7 +77,7 @@ def api_route():
         }
         d.append(row_as_dict)
     return jsonify(d)
-
+#this is a comment
 
 if __name__=='__main__':
     app.run(debug=True)
