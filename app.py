@@ -1,5 +1,5 @@
 
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify,redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -28,9 +28,13 @@ class Covid19Table(db.Model):
     def __repr__(self):
         return f"<Covid19 {self.id} {self.country}>"
 
-
-@app.route("/", methods=["GET"])
+@app.route('/', methods=['GET'])
 def home():
+    return render_template('home.html')
+
+
+@app.route("/projects", methods=["GET"])
+def projects():
     table = Covid19Table.query.all()
     d=[]
     for row in table:
@@ -51,7 +55,7 @@ def home():
             "dec 1": row.dec_1
         }
         d.append(row_as_dict)
-    return render_template("home.html", data=d)
+    return render_template("projects.html", data=d)
 
 
 @app.route("/api", methods=["GET"])
@@ -77,7 +81,6 @@ def api_route():
         }
         d.append(row_as_dict)
     return jsonify(d)
-#this is a comment
 
 if __name__=='__main__':
     app.run(debug=True)

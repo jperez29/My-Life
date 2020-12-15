@@ -1,28 +1,13 @@
-<!doctype html>
-<html>
-  <head>
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}" media="screen"/>
-  </head>
-  <body>
-    {% block body %}{% endblock %}
-  </body>
-</html>
+{% extends "base.html" %}
 
-
-
-<!-- <html>
-<head>
-    <title>COVID-19 Data</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles9.css') }}">
-</head>
-<body>
+{% block body %}
+<div>
     <h1>Percentages of COVID-19 Cases in the Americas Out of the Total Number of Cases in the World</h1>
-    <h3>The COVID-19 pandemic has caused hug social and enomonic devastations around the world. 
+    <h3>The COVID-19 pandemic has caused hug social and ecomonic devastations around the world. 
         This table shows the percent of cumulative COVID-19 cases
         in each country out of the total number of cases in the world at the beginning of each month.
         It captures the growth of cumulative COVID-19 cases in the US and 
-        Latin American compared to the rest of the world.
+        Latin America compared to the rest of the world.
     </h3>
     <table>
         <tr>
@@ -37,14 +22,17 @@
             <td><b>Jul 1</b></td>
             <td><b>Aug 1</b></td>
             <td><b>Sep 1</b></td>
-            <td><b>Oct 1 1</b></td>
+            <td><b>Oct 1 </b></td>
             <td><b>Nov 1</b></td>
             <td><b>Dec 1</b></td>
         </tr>
-        {% for row in items%}
+        {% for row in data%}
         <tr>
-            {% for elem in row%}
-            <td> {{ elem }} </td>
+
+            {% for key,val in row.items()%}
+            <td> {{ val }} </td>
             {% endfor %}
         </tr>
-        {% endfor %}   -->
+        {% endfor %}   
+</div>
+{% endblock %}
