@@ -1,2 +1,2 @@
 release: python ./scrapey.py
-worker: gunicorn app:app
+web: gunicorn app:app
