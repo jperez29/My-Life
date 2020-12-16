@@ -21,11 +21,16 @@ tr {
     font-size: 20px;
 }
 
-h3,p{
-  text-indent: 70px;
-  text-align: center;
+p {
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 50px;
+    margin-right: 150px;
+    margin-left: 80px;
+  }
+img {
+  padding-left: 50px;
 }
-
 td
 {
   height:30px;
