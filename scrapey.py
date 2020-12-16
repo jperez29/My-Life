@@ -49,7 +49,7 @@ def setup_db():
         print(row)
         db.session.add(row)
         db.session.commit()
-
+#this is a comment
 if __name__ == '__main__':
     scrape()
     setup_db()
