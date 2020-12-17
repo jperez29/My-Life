@@ -1,5 +1,3 @@
-#UPDATED PROJECT SCRIPT
-
 import requests
 from bs4 import BeautifulSoup
 from app import db, Covid19Table
@@ -46,10 +44,9 @@ def setup_db():
         row = Covid19Table(country = lst[0], first_case_date = lst[1], jan_1 = lst[2], feb_1 = lst[3], mar_1= lst[4], 
                         apr_1 = lst[5], may_1 = lst[6], jun_1 = lst[7], jul_1 = lst[8], aug_1=lst[9], sept_1 = lst[10],
                         oct_1 = lst[11], nov_1 = lst[12], dec_1 = lst[13])
-        print(row)
         db.session.add(row)
         db.session.commit()
-#this is a comment
+
 if __name__ == '__main__':
     scrape()
     setup_db()
